@@ -12,7 +12,10 @@ const Dropdown = (props) => {
     }
     return (
 
-        <ul onClick={handleClick} className={click ? `dropdown-menu clicked ${props.className}` : `dropdown-menu ${props.className}`} >
+        <ul onClick={() => {
+            handleClick()
+            props.closeMobileMenu()
+        }} className={click ? `dropdown-menu  ${props.className}` : `dropdown-menu ${props.className}`} >
             {
                 MenuItems.map((item, index) => {
                     return (

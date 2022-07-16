@@ -42,6 +42,8 @@ const Navbar = () => {
 
 
 
+    console.log(dropdown)
+
     return (
         <React.Fragment>
             <nav className="navbar">
@@ -64,8 +66,13 @@ const Navbar = () => {
                         <span style={{ cursor: 'pointer' }} className="nav-links" onClick={openDropDown} >
                             All Services <FontAwesomeIcon icon={faCaretDown} />
                         </span>
-                        <Dropdown className={dropdown ? 'mobile_active' : ''} />
+                        <Dropdown closeMobileMenu={closeMobileMenu} className={dropdown ? 'mobile_active' : ''} />
 
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/products" className="nav-links" onClick={closeMobileMenu} >
+                            Products
+                        </Link>
                     </li>
                     <li className="nav-item">
                         <Link to="/contact-us" className="nav-links" onClick={closeMobileMenu} >
@@ -80,8 +87,6 @@ const Navbar = () => {
                     <li className="nav-item" >
                         <Button />
                     </li>
-
-
                 </ul>
             </nav>
         </React.Fragment>
