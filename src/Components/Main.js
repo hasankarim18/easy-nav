@@ -21,7 +21,7 @@ const Main = () => {
                 <Route path="/consulting" element={<Consulting />} />
                 <Route path="/marketing" element={<Marketing />} />
                 <Route path="/products" element={<Products />} />
-                <Route path="/sign-up" element={<Signup />} />
+                <Route path="/signup" element={<Signup />} />
                 <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/development" element={<Development />} />
                 <Route path="/design" element={<Design />} />
