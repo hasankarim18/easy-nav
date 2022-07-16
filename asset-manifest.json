@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/easy-nav/static/css/main.cef53298.css",
+    "main.js": "/easy-nav/static/js/main.83746c05.js",
+    "index.html": "/easy-nav/index.html",
+    "main.cef53298.css.map": "/easy-nav/static/css/main.cef53298.css.map",
+    "main.83746c05.js.map": "/easy-nav/static/js/main.83746c05.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cef53298.css",
+    "static/js/main.83746c05.js"
+  ]
+}
