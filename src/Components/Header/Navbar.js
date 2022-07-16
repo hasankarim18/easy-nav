@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button } from './Button'
 import './Navbar.css'
 import Dropdown from './Dropdown'
@@ -12,6 +12,15 @@ import { faCoffee, faXmark, faBars, faCaretDown } from '@fortawesome/free-solid-
 const Navbar = () => {
     const [click, setClick] = useState(false)
     const [dropdown, setDropdown] = useState(false)
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+        if (window.innerWidth < 960) {
+            setIsMobile(true)
+        } else {
+            setIsMobile(false)
+        }
+    }, [])
 
     const handleClick = () => {
         setClick(!click)
@@ -30,19 +39,22 @@ const Navbar = () => {
     const onMouseLeave = () => {
         if (window.innerWidth > 960) {
             setDropdown(false)
-        }
+        }// else {
+        //     setDropdown(false)
+        // }
     }
+
+
 
     const openDropDown = () => {
         if (window.innerWidth < 960) {
-
             setDropdown(!dropdown)
         }
     }
 
 
 
-    console.log(dropdown)
+    console.log(isMobile)
 
     return (
         <React.Fragment>
@@ -66,7 +78,16 @@ const Navbar = () => {
                         <span style={{ cursor: 'pointer' }} className="nav-links" onClick={openDropDown} >
                             All Services <FontAwesomeIcon icon={faCaretDown} />
                         </span>
-                        <Dropdown closeMobileMenu={closeMobileMenu} className={dropdown ? 'mobile_active' : ''} />
+                        {
+                            isMobile === false ?
+                                dropdown ?
+                                    <Dropdown closeMobileMenu={closeMobileMenu} className={dropdown ? 'mobile_active' : ''} />
+                                    : ''
+                                : ''
+                        }
+                        {
+                            isMobile === true ? <Dropdown closeMobileMenu={closeMobileMenu} className={dropdown ? 'mobile_active' : ''} /> : ''
+                        }
 
                     </li>
                     <li className="nav-item">
