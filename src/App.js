@@ -1,13 +1,14 @@
-
-import './App.css';
+import React from "react";
+import Main from "./Components/Main";
+import { HashRouter } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h3>Easy Nav</h3>
-      </header>
-    </div>
+    <React.Fragment>
+      <HashRouter>
+        <Main />
+      </HashRouter>
+    </React.Fragment>
   );
 }
 
